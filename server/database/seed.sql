@@ -1,0 +1,83 @@
+-- CCC PathFinder seed data. Question IDs/text match client/src/constants/assessmentQuestions.js
+-- DTE 1-5, DCI 6-10, DBA 11-15, DAS 16-20.
+SET NAMES utf8mb4;
+
+INSERT INTO departments (id, code, name, mascot_name) VALUES
+  (1, 'DTE', 'Teacher Education', 'Green Dragon'),
+  (2, 'DCI', 'Computing and Informatics', 'Silver Vikings'),
+  (3, 'DBA', 'Business and Accountancy', 'Yellow Tigers'),
+  (4, 'DAS', 'Arts and Sciences', 'Winter Wolves');
+
+INSERT INTO questions (id, text_en, text_fil, is_reverse_scored, is_active) VALUES
+  (1, 'When a group is struggling to understand a complicated idea, I naturally look for another way to explain it.', 'Kapag nahihirapan ang isang grupo na maintindihan ang isang komplikadong ideya, natural kong hinahanap ang ibang paraan para ipaliwanag ito.', 0, 1),
+  (2, 'When someone keeps making the same mistake while learning something, I stay patient and try a different approach with them.', 'Kapag paulit-ulit na nagkakamali ang isang tao habang natututo, nananatili akong matiyaga at sinusubukan ang ibang paraan sa kanila.', 0, 1),
+  (3, 'I notice when I need to explain something differently depending on who I am talking to.', 'Napapansin ko kapag kailangan kong iba ang paraan ng pagpapaliwanag depende sa kausap ko.', 0, 1),
+  (4, 'When I help someone improve at something, I focus on what will actually help them progress, not just pointing out errors.', 'Kapag tumutulong ako sa isang tao na umunlad sa isang bagay, nakatuon ako sa kung ano talaga ang makakatulong sa kanilang pag-unlad, hindi lang ang pagturo sa mali.', 0, 1),
+  (5, 'In a group setting, I often find myself checking whether everyone is following along before moving forward.', 'Sa isang grupo, madalas kong tinitingnan kung nakakasabay ang lahat bago magpatuloy.', 0, 1),
+  (6, 'When something does not work as expected, I want to understand exactly why before trying another approach.', 'Kapag may hindi gumana ayon sa inaasahan, gusto kong maintindihan kung bakit bago subukan ang ibang paraan.', 0, 1),
+  (7, 'I prefer breaking a complicated task into smaller, more manageable steps rather than tackling it all at once.', 'Mas gusto kong hatiin ang isang komplikadong gawain sa mas maliliit na hakbang kaysa harapin ito nang sabay-sabay.', 0, 1),
+  (8, 'I tend to notice patterns or repeated details that others might overlook.', 'Napapansin ko ang mga pattern o paulit-ulit na detalye na maaaring hindi mapansin ng iba.', 0, 1),
+  (9, 'When solving a problem, I like testing one change at a time to see what effect it has.', 'Kapag lumulutas ng problema, gusto kong subukan ang isang pagbabago sa isang pagkakataon para makita ang epekto nito.', 0, 1),
+  (10, 'If a result seems unusual or unexpected, I want to investigate why before accepting it.', 'Kung may resultang kakaiba o hindi inaasahan, gusto kong imbestigahan kung bakit bago ito tanggapin.', 0, 1),
+  (11, 'When resources like time or money are limited, I naturally think about how to use them most effectively.', 'Kapag limitado ang mapagkukunan tulad ng oras o pera, natural kong iniisip kung paano ito magagamit nang pinakamabisa.', 0, 1),
+  (12, 'I like organizing tasks and responsibilities so that everything gets done on schedule.', 'Gusto kong mag-organisa ng mga gawain at responsibilidad para masigurong natatapos ang lahat sa oras.', 0, 1),
+  (13, 'I am comfortable making a decision even when I do not have all the information I would like.', 'Komportable akong magpasya kahit hindi kumpleto ang impormasyong nasa akin.', 0, 1),
+  (14, 'When planning an activity, I think ahead about timing, coordination, and what could go wrong.', 'Kapag nagpaplano ng isang aktibidad, iniisip ko nang maaga ang timing, koordinasyon, at mga posibleng problema.', 0, 1),
+  (15, 'When choosing between two options, I weigh the trade-offs before deciding.', 'Kapag pumipili sa pagitan ng dalawang opsyon, tinitimbang ko ang mga trade-off bago magpasya.', 0, 1),
+  (16, 'I often notice small differences in how people react to the same situation.', 'Madalas kong napapansin ang maliliit na pagkakaiba kung paano tumutugon ang mga tao sa parehong sitwasyon.', 0, 1),
+  (17, 'I try to understand a situation from more than one person’s perspective before forming an opinion.', 'Sinusubukan kong maintindihan ang isang sitwasyon mula sa higit sa isang pananaw bago bumuo ng opinyon.', 0, 1),
+  (18, 'I find myself wondering why people respond differently to the same event.', 'Naiisip ko kung bakit magkaiba ang tugon ng mga tao sa parehong pangyayari.', 0, 1),
+  (19, 'I pay attention to what might be influencing someone’s mood or behavior, not just what they say.', 'Binibigyang-pansin ko kung ano ang maaaring nakaaapekto sa mood o ugali ng isang tao, hindi lang ang sinasabi nila.', 0, 1),
+  (20, 'After a disagreement or misunderstanding, I like reflecting on what actually caused it.', 'Pagkatapos ng hindi pagkakaunawaan, gusto kong pag-isipan kung ano talaga ang naging sanhi nito.', 0, 1);
+
+INSERT INTO question_department_weights (question_id, department_id, weight) VALUES
+  (1, 1, 1.00),
+  (2, 1, 1.00),
+  (3, 1, 1.00),
+  (4, 1, 1.00),
+  (5, 1, 1.00),
+  (6, 2, 1.00),
+  (7, 2, 1.00),
+  (8, 2, 1.00),
+  (9, 2, 1.00),
+  (10, 2, 1.00),
+  (11, 3, 1.00),
+  (12, 3, 1.00),
+  (13, 3, 1.00),
+  (14, 3, 1.00),
+  (15, 3, 1.00),
+  (16, 4, 1.00),
+  (17, 4, 1.00),
+  (18, 4, 1.00),
+  (19, 4, 1.00),
+  (20, 4, 1.00);
+
+INSERT INTO readiness_sections (department_id, section_type, content, display_order) VALUES
+  (1, 'overview', 'Teacher Education prepares you to guide others in learning. Programs in this department build your understanding of how people learn, how to plan lessons, and how to support learners with different needs.', 1),
+  (1, 'first_year_expectations', 'Expect general education subjects alongside introductory education subjects, early classroom observation, and plenty of group work, presentations, and reflective writing.', 2),
+  (1, 'major_subjects_overview', 'Core subjects typically cover child and adolescent development, principles of teaching, curriculum and assessment, and the content area of your chosen specialization.', 3),
+  (1, 'required_skills', 'Clear communication, patience, adaptability, organization, and a genuine willingness to help others understand.', 4),
+  (1, 'common_challenges', 'Speaking in front of a class, balancing lesson planning with coursework, and staying patient when learners struggle.', 5),
+  (1, 'career_opportunities', 'Classroom teaching at elementary or secondary level, tutoring, curriculum support, and further study in education.', 6),
+  (1, 'preparation_tips', 'Practice explaining a topic to a friend in more than one way, volunteer to help classmates, and build habits for planning and time management.', 7),
+  (2, 'overview', 'Computing and Informatics focuses on how computer systems and information technology are built, used, and fixed. It rewards logical thinking and curiosity about how things work.', 1),
+  (2, 'first_year_expectations', 'Expect introductory programming or computing fundamentals, mathematics, and hands-on lab work where you build and troubleshoot small projects.', 2),
+  (2, 'major_subjects_overview', 'Core subjects commonly include programming, data structures, computer systems, databases, networking, and information management.', 3),
+  (2, 'required_skills', 'Logical and systematic thinking, attention to detail, persistence in troubleshooting, and comfort with breaking problems into smaller steps.', 4),
+  (2, 'common_challenges', 'Debugging frustrating errors, keeping up with fast-changing tools, and the steady practice needed to learn programming.', 5),
+  (2, 'career_opportunities', 'Software and web development, IT support, systems and network administration, data work, and further specialization in computing.', 6),
+  (2, 'preparation_tips', 'Try a beginner programming tutorial, practice solving puzzles step by step, and get comfortable searching for and reading technical explanations.', 7),
+  (3, 'overview', 'Business and Accountancy covers how organizations manage money, people, and operations. It builds skills in planning, decision-making, and working with financial information.', 1),
+  (3, 'first_year_expectations', 'Expect foundational business, economics, and accounting subjects, basic mathematics, and group projects that simulate planning and decision-making.', 2),
+  (3, 'major_subjects_overview', 'Core subjects typically include fundamentals of accounting, business management, marketing, economics, and business mathematics.', 3),
+  (3, 'required_skills', 'Organization, planning, numeracy, sound judgment under limited information, and the ability to weigh trade-offs.', 4),
+  (3, 'common_challenges', 'Working carefully with numbers, managing deadlines across many tasks, and making decisions when information is incomplete.', 5),
+  (3, 'career_opportunities', 'Accounting and bookkeeping, banking and finance, business administration, entrepreneurship, and marketing or operations roles.', 6),
+  (3, 'preparation_tips', 'Practice budgeting for a small activity, organize your own schedule, and review basic mathematics to build confidence with numbers.', 7),
+  (4, 'overview', 'Arts and Sciences explores people, society, language, and the natural world. It develops curiosity, critical thinking, and the ability to understand different perspectives.', 1),
+  (4, 'first_year_expectations', 'Expect broad foundational subjects in the humanities, social sciences, and sciences, with a lot of reading, writing, discussion, and reflection.', 2),
+  (4, 'major_subjects_overview', 'Core subjects vary by program but commonly include communication, social science, research methods, and foundational science or humanities subjects.', 3),
+  (4, 'required_skills', 'Observation, open-mindedness, analytical reading and writing, empathy, and curiosity about why people think and act as they do.', 4),
+  (4, 'common_challenges', 'Heavy reading and writing loads, handling open-ended questions with no single right answer, and organizing your own ideas clearly.', 5),
+  (4, 'career_opportunities', 'Research, communication and media, community and social work, public service, and graduate or professional study.', 6),
+  (4, 'preparation_tips', 'Read widely, practice writing short reflections, join discussions and listen to views different from yours, and keep asking why.', 7);

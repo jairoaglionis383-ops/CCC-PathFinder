@@ -1,0 +1,50 @@
+/*
+  Design tokens - transcribed directly from the approved Phase 1
+  Design System Foundation document. This file is the single source
+  of truth; tailwind.config.js only exposes these as utility classes.
+  Do not add values here that aren't in the Phase 1 document.
+*/
+
+:root {
+  /* Primary palette */
+  --color-sky: #2E7CD6;
+  --color-sky-ink: #2569B8; /* darker brand blue for small text and for fills that carry white text (WCAG AA 4.5:1) */
+  --color-sky-tint: #EAF3FC;
+  --color-white: #FFFFFF;
+  --color-gray-light: #F4F6F8;
+  --color-gray-dark: #57606B;
+  --color-navy: #0E2A47;
+
+  /* Department accents - accent-only, never structural (Phase 1 §2.2) */
+  --color-dte: #2F7D5A;
+  --color-dte-tint: #E3F3EA;
+  --color-dte-text: #1F5A3F;
+
+  --color-dci: #55708A;
+  --color-dci-tint: #E8ECF1;
+  --color-dci-text: #3A4E61;
+
+  --color-dba: #C98A2B;
+  --color-dba-tint: #FBF0DC;
+  --color-dba-text: #8F611D;
+
+  --color-das: #6E62A6;
+  --color-das-tint: #EEEBF7;
+  --color-das-text: #4C4275;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(14, 42, 71, 0.04);
+  --shadow-2: 0 8px 24px rgba(14, 42, 71, 0.08);
+  --shadow-3: 0 16px 40px rgba(14, 42, 71, 0.12);
+
+  /* Motion (Phase 1 §5) - referenced by components, not hardcoded per-file */
+  --motion-fast: 150ms;
+  --motion-step: 200ms;
+  --motion-ease: ease-out;
+}
